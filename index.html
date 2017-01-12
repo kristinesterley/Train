@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+
+  <!-- Link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+  <!-- link to the firebase library -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+   <!-- Link to the Bootstrap library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Link to an additional CSS file -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Overall Bootstrap grid -->
+  <div class="container">
+
+    <!-- Jumbotron with title -->
+    <div class="jumbotron format">
+      <div class="container">
+       <h1 class="text-center">Train Arrivals</h1>
+      </div> 
+    </div> <!-- End page-header -->
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Current Train Schedule</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Train Name</td>
+          <td>Destination</td>
+          <td>Frequency(min)</td>
+          <td>Next Arrival</td>
+          <td>Minutes Away</td>
+          <td>Action</td>
+        </tr>
+        </thead>        
+        <tbody id="table_body">
+        </tbody>
+      </table>  
+
+  </div> <!-- end panel current train schedule -->   
+
+  <div class="panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading">Add Train</div>
+    <div class="panel-body">
+      <form>
+        Train Name<br>
+        <input type="text" class="form-control" id="trainName">
+        <br>
+        Destination<br>
+        <input type="text" class="form-control" id="destination">
+        <br>
+        First Train Time (HH:mm - military time)<br>
+        <input type="text" class="form-control" id="firstTime">
+        <br>
+        Frequency (min) <br>
+        <input type="text" class="form-control" id="frequency">
+        <br>
+        <button type="button" class="btn btn-default" id="submit">Submit</button>
+
+      </form>
+      </div> <!--end panel body-->
+
+
+
+  </div> <!-- end panel add train -->
+
+    </div> <!-- End container-->
+
+  <script type="text/javascript" src="./assets/javascript/app.js"></script>
+
+</body>
+</html>
