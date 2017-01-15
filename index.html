@@ -12,6 +12,8 @@
 
    <!-- Link to the Bootstrap library -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!-- Added Moment JS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
   <!-- Link to an additional CSS file -->
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -29,54 +31,50 @@
       </div> 
     </div> <!-- End page-header -->
 
-<div class="panel panel-default">
+  <div class="panel panel-primary">
   <!-- Default panel contents -->
-  <div class="panel-heading">Current Train Schedule</div>
+    <div class="panel-heading">Current Train Schedule</div>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <td>Train Name</td>
-          <td>Destination</td>
-          <td>Frequency(min)</td>
-          <td>Next Arrival</td>
-          <td>Minutes Away</td>
-          <td>Action</td>
-        </tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Train Name</td>
+            <td>Destination</td>
+            <td>Frequency(min)</td>
+            <td>Next Arrival</td>
+            <td>Minutes Away</td>
+            <td>Action</td>
+          </tr>
         </thead>        
         <tbody id="table_body">
         </tbody>
       </table>  
 
-  </div> <!-- end panel current train schedule -->   
+    </div> <!-- end panel current train schedule -->   
 
-  <div class="panel panel-default">
-  <!-- Default panel contents -->
-    <div class="panel-heading">Add Train</div>
-    <div class="panel-body">
-      <form>
-        Train Name<br>
-        <input type="text" class="form-control" id="trainName">
-        <br>
-        Destination<br>
-        <input type="text" class="form-control" id="destination">
-        <br>
-        First Train Time (HH:mm - military time)<br>
-        <input type="text" class="form-control" id="firstTime">
-        <br>
-        Frequency (min) <br>
-        <input type="text" class="form-control" id="frequency">
-        <br>
-        <button type="button" class="btn btn-default" id="submit">Submit</button>
-
-      </form>
+    <div class="panel panel-primary">
+    <!-- Default panel contents -->
+      <div class="panel-heading trainForm">Add Train</div>
+      <div class="panel-body">
+        <form>
+          Train Name<br>
+          <input type="text" class="form-control" id="trainName">
+          <br>
+          Destination<br>
+          <input type="text" class="form-control" id="destination">
+          <br>
+          First Train Time (HH:mm - military time)<br>
+          <input type="text" class="form-control" id="firstTime">
+          <br>
+          Frequency (min) <br>
+          <input type="text" class="form-control" id="frequency">
+          <br>
+          <button type="button" class="btn btn-default" id="submit">Submit</button>
+          <button type="button" class="btn btn-default" id="cancel">Cancel</button>
+        </form>
       </div> <!--end panel body-->
-
-
-
-  </div> <!-- end panel add train -->
-
-    </div> <!-- End container-->
+    </div> <!-- end panel add train -->
+  </div> <!-- End container-->
 
   <script type="text/javascript" src="./assets/javascript/app.js"></script>
 
