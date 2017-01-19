@@ -98,7 +98,7 @@ function resetForm(){
   // if adding, add the data to the database
   // if updating, update the database and update the table in the display
 
-  // once done, reset the form to be empty and in add mode
+  // once done, reset the form to be empty and in put set add mode
 
   $("#submit").on("click",function(){
 
@@ -151,10 +151,32 @@ function resetForm(){
  // delete the record from the database. The database.on("child_removed")
  // code will be kicked off, and in that code, the row is deleted from the display
 
+ // note that user's can be updating one record and delete another - this is why we "save off" keys to keep track
+ // of which one is being deleted and which one is being update
+
   $(document).on("click",'.delete',function(){
-  	current_key = $(this).attr("data-key");
-  	database.child(current_key).remove();
+    var delete_key = $(this).attr("data-key");
+    if ((current_key === delete_key)&&(formMode==="update")){
+        database.child(current_key).remove();
+        resetForm();
+
+    }
+    else if ((current_key !== delete_key)&&(formMode==="update")){
+      var update_key=current_key;
+      current_key = delete_key;
+      database.child(delete_key).remove();
+      current_key=update_key;
+      
+    }
+    else if (formMode==="add"){
+      current_key = delete_key
+      database.child(current_key).remove();
+    }
+
   });
+
+  //when user clicks on an update key for a table row, put the table row data
+  //into the form and change the label of the form to show update
 
   $(document).on("click",'.update',function(){
 
